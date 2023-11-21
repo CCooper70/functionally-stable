@@ -1,102 +1,80 @@
-/*
-
-Your code goes below.
-
-*/
-
-
-
-
-
-/*********************************************************************************************************************
-
- * CODE BELOW HERE IS FOR INTERNAL USE ONLY! IT ENSURES THAT THE TESTING *
- * CAN READ AND EVALUATE YOUR CODE. *
- * DON'T CHANGE ANYTHING BELOW HERE, PLEASE! *
-
- *********************************************************************************************************************/
-
-if (typeof x === 'undefined') {
-  x = undefined;
-}
-
-if (typeof y === 'undefined') {
-  y = undefined;
-}
-
-if (typeof z === 'undefined') {
-  z = undefined;
-}
-
-if (typeof name === 'undefined') {
-  name = undefined;
-}
-
-if (typeof greeting === 'undefined') {
-  greeting = undefined;
-}
-
-
-if (typeof multiply === 'undefined') {
-  multiply = undefined;
-}
-
-if (typeof modYBy === 'undefined') {
-  modYBy = undefined;
-}
-
-if (typeof opposite === 'undefined') {
-  opposite = undefined;
-}
-
-if (typeof makeFullName === 'undefined') {
-  makeFullName = undefined;
-}
-
-if (typeof yellAt === 'undefined') {
-  yellAt = undefined;
-}
-
-if (typeof fullName === 'undefined') {
-  fullName = undefined;
-}
+// test.js
 
 const assert = require('assert');
+const { add, subtract, multiply, divide, square, squareRoot, concatenate } = require('./main'); // replace 'yourFileName' with the actual file name containing the functions
 
-describe('multiply', () => {
-  it(`multiplies x by the given parameter`, () => {
-    multiply(15);
-    multiply(3);
-    assert.strictEqual(x, 135, 'x should be 45');
+function captureConsoleLog(callback) {
+  let consoleOutput = '';
+  const originalConsoleLog = console.log;
+  console.log = (message) => {
+    consoleOutput += message + '\n';
+  };
+
+  callback();
+
+  console.log = originalConsoleLog;
+  return consoleOutput;
+}
+
+describe('add function', function () {
+  it('should add two numbers and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      add(5, 3);
+    });
+    assert.strictEqual(consoleOutput.trim(), '8');
   });
 });
 
-describe('modYBy', () => {
-  it(`runs a modulus operation on y`, () => {
-    modYBy(4);
-    assert.strictEqual(y, 2, 'y should be 2');
+describe('subtract function', function () {
+  it('should subtract two numbers and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      subtract(8, 3);
+    });
+    assert.strictEqual(consoleOutput.trim(), '5');
   });
 });
 
-describe('opposite', () => {
-  it(`sets z to the opposite of the given parameter`, () => {
-    opposite(3);
-    assert.strictEqual(z, -3, 'z should be -3');
+describe('multiply function', function () {
+  it('should multiply two numbers and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      multiply(5, 6);
+    });
+    assert.strictEqual(consoleOutput.trim(), '30');
   });
 });
 
-describe('makeFullName', () => {
-  it(`adds a space and the parameter to name`, () => {
-    let oldName = name;
-    makeFullName('Rose');
-    assert.strictEqual(name, oldName + ' Rose', 'name should be the full name');
+describe('divide function', function () {
+  it('should divide two numbers and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      divide(10, 2);
+    });
+    assert.strictEqual(consoleOutput.trim(), '5');
   });
 });
 
-describe('yellAt', () => {
-  it(`makes greeting into a string that yells the greeting at someone`, () => {
-    yellAt('Kyle');
-    assert.strictEqual(greeting, 'HEY, Kyle!', 'greeting should be yelled');
+describe('square function', function () {
+  it('should calculate the square of a number and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      square(4);
+    });
+    assert.strictEqual(consoleOutput.trim(), '16');
   });
 });
 
+describe('squareRoot function', function () {
+  it('should calculate the square root of a number and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      squareRoot(9);
+    });
+    assert.strictEqual(consoleOutput.trim(), '3');
+  });
+});
+
+describe('concatenate function', function () {
+  it('should concatenate two strings and log the result', function () {
+    const consoleOutput = captureConsoleLog(() => {
+      concatenate("Hello", "World");
+    });
+    assert.strictEqual(consoleOutput.trim(), 'HelloWorld');
+  });
+});

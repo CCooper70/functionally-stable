@@ -1,15 +1,11 @@
 {
-  "name": "testing-template-repo",
+  "name": "functionallystable",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Functionally Stable",
+  "main": "main.js",
   "scripts": {
     "test": "mocha -w main.test.js"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "mocha":"^10.2.0"
-  }
+  "license": "ISC"
 }
