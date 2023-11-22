@@ -16,15 +16,17 @@ function divide(num1, num2){
 console.log(num1 / num2)
 }
 
-function square(){
-    
+function square(num1){
+console.log(num1 * 4)
 }
 
+function squareRoot(a){
+console.log( a**(0.5))
+}
 
-
-
-
-
+function concatenate(string1, string2){
+console.log(string1 + string2)
+}
 
 
 
