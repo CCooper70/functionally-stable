@@ -17,7 +17,7 @@ console.log(num1 / num2)
 }
 
 function square(num1){
-console.log(num1 * 4)
+console.log(num1 * num1)
 }
 
 function squareRoot(a){
